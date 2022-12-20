@@ -53,7 +53,7 @@ export default function AdminCard({productSet, token, deleteCallback}) {
             <Grid container spacing={2}>
                 <Grid item>
                     <ButtonBase sx={{ width: 128, height: 128 }}>
-
+                        <Img src={require('./img.jpg')} />
                     </ButtonBase>
                 </Grid>
                 <Grid item xs={12} sm container>
