@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 export default function OutfitCard({img, labels, productLink}) {
 
     const result = productLink.split(" ");
+    let link = result[result.length - 1];
     let url = "product link: " + result[result.length - 1];
     var name = "";
     for (let i = 0; i < result.length -1; i++) {
@@ -18,6 +19,9 @@ export default function OutfitCard({img, labels, productLink}) {
     let color = "color: " + labels[0].value;
     let gender = "gender: " + labels[1].value;
     let category = "category: " + labels[2].value;
+    const openInNewTab = () => {
+        window.open(link);
+    };
 
     return (
         <Card sx={{ maxWidth: 345 }}>
@@ -47,7 +51,9 @@ export default function OutfitCard({img, labels, productLink}) {
             </CardContent>
             <CardActions>
                 <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
+                <Button size="small" onClick={openInNewTab} >
+                    Shop Product
+                </Button>
             </CardActions>
         </Card>
     );
